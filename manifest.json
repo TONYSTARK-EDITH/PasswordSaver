@@ -11,6 +11,12 @@
     "clipboardRead"
   ],
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_title": "Password Generator",
+    "default_icon": {
+      "16": "padlock.png",
+      "48": "padlock.png",
+      "128": "padlock.png"
+    }
   }
 }

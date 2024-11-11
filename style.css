@@ -1,0 +1,105 @@
+html {
+    width: max-content;
+    height: max-content;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#generate {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.mui-select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    appearance: none;
+    background-color: #fff;
+    color: #495057;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+
+    &::placeholder {
+        color: #6c757d;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    &:hover {
+        border-color: #b0c4de;
+    }
+}
+
+.mui-select::after {
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    transform: translateY(16px);
+    right: 15px;
+    vertical-align: middle;
+    pointer-events: none;
+    color: #6c757d;
+}
+
+.tooltip {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: -30px;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.mui-select:hover~.tooltip {
+    top: 4px;
+    opacity: 1;
+}

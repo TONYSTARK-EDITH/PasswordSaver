@@ -1,75 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Generate Password</title>
-</head>
-<style>
-    .image {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generate Password</title>
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="mui-select">
+                <select name="length" id="length">
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                    <option value="32" selected>32</option>
+                    <option value="64">64</option>
+                    <option value="128">128</option>
+                    <option value="256">256</option>
+                    <option value="512">512</option>
+                </select>
+            </div>
+            <div class="tooltip">Length</div>
+            <img id="generate" src="icons8-data-encryption-36.png"
+                alt="Generate">
+        </div>
 
-    img {
-        height: 30px;
-        width: 30px;
-        outline: none;
-        margin: 10px;
-        border: none;
-        border-radius: 2px;
-    }
-
-
-    .mui-select {
-        height: 30px;
-        outline: none;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
-    }
-
-    select {
-        padding: 0.4rem;
-        border-radius: 4%;
-        transition: all ease-in-out 1s;
-    }
-
-    select:after, select:focus, select::before {
-        outline: none !important;
-    }
-
-</style>
-<body>
-<div class="mui-select">
-    <!--<label><img src="password.png"></label>-->
-    <label for="st">Length</label>
-    <select name="length" id="st">
-        <optgroup label="Short Password">
-            <option value="8">8</option>
-            <option value="16">16</option>
-        </optgroup>
-        <optgroup label="Long Password">
-            <option value="32" selected>32</option>
-            <option value="64">64</option>
-            <option value="128">128</option>
-        </optgroup>
-        <optgroup label="Very Long Password">
-            <option value="256">256</option>
-            <option value="512">512</option>
-        </optgroup>
-
-    </select>
-
-
-</div>
-<div class="image">
-    <img id="gen" src="icons8-data-encryption-36.png" alt="Generate" style="cursor: pointer"/>
-</div>
-
-
-<script type="text/javascript" src="index.js"></script>
-</body>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
 </html>

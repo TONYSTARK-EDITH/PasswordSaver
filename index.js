@@ -1,4 +1,4 @@
-const gen = document.getElementById("gen")
+const gen = document.getElementById("generate")
 const setPasswords = length => {
 
     const splChars = "!@#$%^&*()_+-=,.<>/?*~`:;'\"\\{}[]";
@@ -255,9 +255,11 @@ const setPasswords = length => {
         document.body.removeChild(copyFrom);
     }
     const pwd = generateRandomCapitalization(Sha512.hash(new Date().toString()).slice(0, length));
-    copyTextToClipboard(pwd)
+    copyTextToClipboard(pwd);
+    console.log(pwd);
     document.querySelectorAll("input[type='password']").forEach(e => {
-        e.value = pwd
+        console.log(e);
+        e.value = pwd;
     })
 
 }
@@ -268,7 +270,7 @@ gen.addEventListener("click", async () => {
     chrome.scripting.executeScript({
         target : {tabId: tab.id},
         func : setPasswords,
-        args : [+document.getElementById("st").value]
+        args : [+document.getElementById("length").value]
     });
 })
 
